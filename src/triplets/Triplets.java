@@ -46,6 +46,12 @@ public class Triplets {
         rhymingNouns.add("doghouse");
         rhymingNouns.add("beachhouse");
         rhymingNouns.add("treehouse");
+        
+        //Creating a two demsional array list to hold my array lists
+        ArrayList<ArrayList<String>> holder = new ArrayList<ArrayList<String>>();
+        holder.add(nouns);
+        holder.add(verbs);
+        holder.add(rhymingNouns);
 
         String noun;
         String verb1, verb2, verb3;
@@ -55,37 +61,38 @@ public class Triplets {
         //get a random noun from the nouns array
         //use .size() to get the # of elements
         randomNum = (int) (Math.random() * nouns.size());
-        noun = nouns.get(randomNum);
+        noun = holder.get(0).get(randomNum);
 
         //get the first random verb from the verbs array &
         //remove from ArrayList
         randomNum = (int) (Math.random() * verbs.size());
-        verb1 = verbs.get(randomNum);
+        verb1 = holder.get(1).get(randomNum);
         verbs.remove(randomNum);
 
         //get the second random verb from verbs array and remove it
         randomNum = (int) (Math.random() * verbs.size());
-        verb2 = verbs.get(randomNum);
+        verb2 = holder.get(1).get(randomNum);
         verbs.remove(randomNum);
         
         //get the second random verb from verbs array and remove it
         randomNum = (int) (Math.random() * verbs.size());
-        verb3 = verbs.get(randomNum);
+        verb3 = holder.get(1).get(randomNum);
         verbs.remove(randomNum);
-
+        
+        
         //get the first rhyming noun and remove it
         randomNum = (int) (Math.random() * rhymingNouns.size());
-        rhymingNoun1 = rhymingNouns.get(randomNum);
+        rhymingNoun1 = holder.get(2).get(1);
         rhymingNouns.remove(randomNum);
 
         //get the second rhyming noun and remove it
         randomNum = (int) (Math.random() * rhymingNouns.size());
-        rhymingNoun2 = rhymingNouns.get(randomNum);
+        rhymingNoun2 = holder.get(2).get(4);
         rhymingNouns.remove(randomNum);
         
         //get the second rhyming noun and remove it
         randomNum = (int) (Math.random() * rhymingNouns.size());
-        rhymingNoun3 = rhymingNouns.get(randomNum);
+        rhymingNoun3 = holder.get(2).get(2);
         rhymingNouns.remove(randomNum);
 
         //Display the poem
